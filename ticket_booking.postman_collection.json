@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "d592de29-8465-46ad-85bf-257aaa0496c2",
+		"name": "ticket_booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"seat_number\":36,\n\t\"booking_status\":\"Booked\",\n\t\"traveller\": {\n\t\t\"name\": \"ramdev\",\n\t\t\"phone\": 8310311530\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7894/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7894",
+					"path": [
+						"tickets"
+					]
+				},
+				"description": "{\n\tname : \"john\",\n\tseat_number:1\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "update_booking_status_user_details",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"booking_status\":\"Booked\",\n\t\"traveller\":{\n\t\t\"name\":\"pikachu\",\n\t\t\"phone\":9090909090\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7894/ticket/?ticket_id=5e8b03a9f8a5df9c8cc01f2e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7894",
+					"path": [
+						"ticket",
+						""
+					],
+					"query": [
+						{
+							"key": "ticket_id",
+							"value": "5e8b03a9f8a5df9c8cc01f2e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Ticket_By_ticket_id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:7894/ticket?ticket_id=5e8b03a9f8a5df9c8cc01f2e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7894",
+					"path": [
+						"ticket"
+					],
+					"query": [
+						{
+							"key": "ticket_id",
+							"value": "5e8b03a9f8a5df9c8cc01f2e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_open_tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7894/tickets/open",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7894",
+					"path": [
+						"tickets",
+						"open"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_closed_tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7894/tickets/closed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7894",
+					"path": [
+						"tickets",
+						"closed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_User_By_ticket_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7894/user?ticket_id=5e8af96f64035d83f67516e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7894",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "ticket_id",
+							"value": "5e8af96f64035d83f67516e6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open_All_Tickets",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7894/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7894",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Destroy_All_Tickets_Users",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7894/reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7894",
+					"path": [
+						"reset"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
