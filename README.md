@@ -1,3 +1,11 @@
+# Running the application
+- clone the repo
+- cd BUS_Ticket_booking
+- npm install
+- npm start
+- call the APIs using postman collection "ticket_booking.postman_collection.json" 
+
+
 # APIs
 
 ## (Create Ticket) 
