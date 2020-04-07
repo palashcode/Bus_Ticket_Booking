@@ -1,0 +1,9 @@
+// .babelrc file to load the presets and plugins
+{
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "ignore": [
+    "./node_modules"
+  ]
+}
